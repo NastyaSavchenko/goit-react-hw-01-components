@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 const Statistics = ({ title, stats }) => {
   return (
     <section className={styles.statistics}>
-      <h2 className={styles.title}>{title}</h2>
+      {title && (<h2 className={styles.title}>{title}</h2>)}
+
       <ul className={styles.statList}>
         {stats.map(el => {
           return (
@@ -23,6 +24,6 @@ const Statistics = ({ title, stats }) => {
 export default Statistics;
 
 Statistics.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   stats: PropTypes.arrayOf(PropTypes.shape({label: PropTypes.string, percentage: PropTypes.number})),
 };
