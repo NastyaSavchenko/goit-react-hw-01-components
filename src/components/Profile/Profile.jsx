@@ -1,4 +1,5 @@
 import styles from './Profile.module.css';
+import PropTypes from 'prop-types';
 
 const Profile = ({ username, tag, location, avatar, stats }) => {
   const statsInfo = [
@@ -31,3 +32,14 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
 };
 
 export default Profile;
+
+Profile.propTypes = {
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  followers: PropTypes.number, 
+  views: PropTypes.number, 
+  likes: PropTypes.number,
+  // stats: PropTypes.objectOf(PropTypes.exact({followers: PropTypes.number, views: PropTypes.number, likes: PropTypes.number})),
+};
